@@ -1,0 +1,12 @@
+upstream web_portifolio {
+        server 172.25.0.9:3000;
+        server 172.25.0.10:3000;
+}
+
+server {
+        listen 80;
+
+        location / {
+                proxy_pass http://web_portifolio;
+        }
+}
